@@ -30,11 +30,18 @@ public class Pessoa implements Serializable {
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dataDeCadastro;
     
+    @OneToOne(mappedBy="pessoa", fetch=FetchType.LAZY)
+    @ForeignKey(name="EnderecoPessoa")
+    private Endereco endereco;
+    
     @ManyToOne(optional=false)
     @ForeignKey(name="PessoaSexo")
-    private Pessoa pessoa;
+    @JoinColumn(name="IdSexo",referencedColumnName="IdSexo")
+    private Sexo sexo;
 
     public Pessoa() {
+        this.endereco = new Endereco();
+        this.sexo = new Sexo();
     }
 
     public String getCpf() {
@@ -97,6 +104,22 @@ public class Pessoa implements Serializable {
         this.telefone = telefone;
     }
 
+    public Sexo getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(Sexo sexo) {
+        this.sexo = sexo;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+    
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {

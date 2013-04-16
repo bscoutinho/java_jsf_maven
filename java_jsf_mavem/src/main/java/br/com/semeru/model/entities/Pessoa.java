@@ -3,6 +3,7 @@ package br.com.semeru.model.entities;
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
+import org.hibernate.annotations.ForeignKey;
 
 @Entity
 @Table (name="pessoa")
@@ -28,6 +29,10 @@ public class Pessoa implements Serializable {
     @Column(name="DataDeCadastro", nullable =false)
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dataDeCadastro;
+    
+    @ManyToOne(optional=false)
+    @ForeignKey(name="PessoaSexo")
+    private Pessoa pessoa;
 
     public Pessoa() {
     }

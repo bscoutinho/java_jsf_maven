@@ -15,6 +15,13 @@
         <jsf.version>2.1.7</jsf.version>
         <jstl.version>1.2</jstl.version>
         <jsf.version>2.1.7</jsf.version>
+        <mysql.version>5.1.9</mysql.version>
+        <spring.version>3.0.5.RELEASE</spring.version>
+        <groovy-all.version>1.7.5</groovy-all.version>
+        <hibernate.version>4.0.1.Final</hibernate.version>
+        <netbeans.hint.deploy.server>Tomcat</netbeans.hint.deploy.server>
+        <slf4j.version>1.6.4</slf4j.version>
+        <themes.version>1.0.9</themes.version>
     </properties>
     
     <repositories>
@@ -43,8 +50,7 @@
             <version>6.0</version>
             <scope>provided</scope>
         </dependency>
-        
-            <!-- || DEPENDÃŠNCIAS DO JAVA SERVER FACES || -->                       
+                              
     <!-- ############## JSF-API ################ -->
     <dependency>
         <groupId>com.sun.faces</groupId>
@@ -66,6 +72,128 @@
         <artifactId>jstl</artifactId>  
         <version>${jstl.version}</version>  
     </dependency> 
+    
+    <!-- ############### DOM4J ################# -->
+    <dependency>
+    <artifactId>dom4j</artifactId>
+    <groupId>dom4j</groupId>
+    <type>jar</type>
+    <version>1.6.1</version>
+    <exclusions>
+        <exclusion>
+            <artifactId>xml-apis</artifactId>
+            <groupId>xml-apis</groupId>
+        </exclusion>
+    </exclusions>
+    </dependency>
+    
+     <!-- ################ HIBERNATE-C3P0 ################# -->
+    <dependency>  
+        <groupId>org.hibernate</groupId>  
+        <artifactId>hibernate-c3p0</artifactId>  
+        <version>${hibernate.version}</version>  
+    </dependency> 
+    
+    <!-- ################ C3P0 ################# -->
+    <dependency>  
+        <groupId>c3p0</groupId>  
+        <artifactId>c3p0</artifactId> 
+        <type>jar</type>
+        <version>0.9.1</version>  
+    </dependency> 
+    
+    <!-- ################ HIBERNATE-CORE ################# -->
+    <dependency>  
+        <groupId>org.hibernate</groupId>  
+        <artifactId>hibernate-core</artifactId>  
+        <version>${hibernate.version}</version>  
+    </dependency> 
+    
+    <!-- ################ HIBERNATE-ENTITYMANAGER ################# -->
+    <dependency>
+        <groupId>org.hibernate</groupId>
+        <artifactId>hibernate-entitymanager</artifactId>
+        <version>${hibernate.version}</version>
+    </dependency>
+    
+    <!-- ################ HIBERNATE-ENTITYMANAGER ################# -->
+     <dependency>
+        <groupId>org.hibernate</groupId>
+        <artifactId>hibernate-annotations</artifactId>
+        <version>3.5.0-Final</version>
+    </dependency>
+    
+    <!-- ############### MYSQL ################# -->
+    <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>${mysql.version}</version>
+    </dependency>
+    
+    <!-- ############### SLF4J ################# -->
+     <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-log4j12</artifactId>
+        <version>${slf4j.version}</version>
+    </dependency>
+    
+     <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>${slf4j.version}</version>
+    </dependency>
+    
+     <!-- ############### PRIMEFACES ################# -->
+     <dependency>
+        <groupId>org.primefaces</groupId>
+        <artifactId>primefaces</artifactId>
+        <version>3.4.2</version>
+    </dependency>
+    
+    <!-- ############### PRIMEFACES THEMES ################# -->
+    
+    <dependency>
+        <groupId>org.primefaces.themes</groupId>
+        <artifactId>cupertino</artifactId>
+        <version>${themes.version}</version>
+    </dependency>
+    
+     <dependency>
+        <groupId>org.primefaces.themes</groupId>
+        <artifactId>le-frog</artifactId>
+        <version>${themes.version}</version>
+    </dependency>
+    
+     <dependency>
+        <groupId>org.primefaces.themes</groupId>
+        <artifactId>sam</artifactId>
+        <version>${themes.version}</version>
+    </dependency>
+    
+     <dependency>
+        <groupId>org.primefaces.themes</groupId>
+        <artifactId>pepper-grinder</artifactId>
+        <version>${themes.version}</version>
+    </dependency>
+    
+    <dependency>
+        <groupId>org.primefaces.themes</groupId>
+        <artifactId>smoothness</artifactId>
+        <version>${themes.version}</version>
+    </dependency>
+    
+    <dependency>
+        <groupId>org.primefaces.themes</groupId>
+        <artifactId>ui-lightness</artifactId>
+        <version>${themes.version}</version>
+    </dependency>
+    
+    <dependency>
+        <groupId>org.primefaces.themes</groupId>
+        <artifactId>south-street</artifactId>
+        <version>${themes.version}</version>
+    </dependency>
+    
     </dependencies>
 
     <build>
